@@ -7,6 +7,9 @@ import org.slf4j.Logger;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
+/**
+ *  React on all received messages
+ */
 public class HelloWorldListener extends AbstractListener {
 
     private static final Logger logger = getLogger(HelloWorldListener.class);

@@ -4,10 +4,12 @@ import com.ullink.slack.simpleslackapi.SlackAttachment;
 import com.ullink.slack.simpleslackapi.SlackMessage;
 import com.ullink.slack.simpleslackapi.SlackMessageListener;
 import com.ullink.slack.simpleslackapi.SlackSession;
+import lombok.Getter;
 
+@Getter
 public abstract class AbstractListener implements SlackMessageListener {
 
-    private SlackClient client;
+    private final SlackClient client;
 
     public AbstractListener(SlackClient client) {
         this.client = client;
@@ -27,13 +29,9 @@ public abstract class AbstractListener implements SlackMessageListener {
         return getClient().getBotName().equalsIgnoreCase(message.getSender().getUserName());
     }
 
-    public SlackClient getClient() {
-        return client;
-    }
+    public abstract void handleMessage(SlackMessage slackMessage);
 
     protected void sendMessage(SlackMessage message, String response) {
         getClient().getSession().sendMessage(message.getChannel(), response, new SlackAttachment(), "", "");
     }
-
-    public abstract void handleMessage(SlackMessage slackMessage);
 }
