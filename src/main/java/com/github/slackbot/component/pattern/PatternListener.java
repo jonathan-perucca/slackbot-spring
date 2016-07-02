@@ -16,12 +16,9 @@ public class PatternListener extends AbstractPatternListener {
     }
 
     @Override
-    public void handleMessage(SlackMessage message) {
-        final Matcher matcher = getPattern().matcher(message.getMessageContent());
-        if (matcher.matches()) {
-            final String response = "Pattern listened ".concat(matcher.group(1));
+    protected void handleMessage(SlackMessage message, Matcher matcher) {
+        final String response = "Pattern listened ".concat(matcher.group(1));
 
-            sendMessage(message, response);
-        }
+        sendMessage(message, response);
     }
 }
