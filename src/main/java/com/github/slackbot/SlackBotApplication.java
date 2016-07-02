@@ -27,21 +27,6 @@ public class SlackBotApplication {
 			session.getUsers()
 				   .stream()
 				   .forEach(slackUser -> logger.info(slackUser.getRealName()));
-
-			session.addMessageListener(new SlackMessageListener() {
-				@Override
-				public void onSessionLoad(SlackSession session) {}
-
-				@Override
-				public void onMessage(SlackMessage message) {
-					final boolean isSelf = client.getBotName().equalsIgnoreCase(message.getSender().getUserName());
-					if (isSelf) return;
-
-					logger.info("MESSAGE RECEIVED - '{}'", message.getMessageContent());
-
-					session.sendMessage(message.getChannel(), "Hello world", new SlackAttachment(), "", "");
-				}
-			});
 		};
 	}
 
