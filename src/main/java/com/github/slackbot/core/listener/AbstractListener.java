@@ -1,5 +1,6 @@
-package com.github.slackbot.core;
+package com.github.slackbot.core.listener;
 
+import com.github.slackbot.core.SlackClient;
 import com.ullink.slack.simpleslackapi.SlackAttachment;
 import com.ullink.slack.simpleslackapi.SlackMessage;
 import com.ullink.slack.simpleslackapi.SlackMessageListener;

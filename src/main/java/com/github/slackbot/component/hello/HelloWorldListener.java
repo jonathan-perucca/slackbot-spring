@@ -1,6 +1,6 @@
 package com.github.slackbot.component.hello;
 
-import com.github.slackbot.core.AbstractListener;
+import com.github.slackbot.core.listener.AbstractListener;
 import com.github.slackbot.core.SlackClient;
 import com.ullink.slack.simpleslackapi.SlackMessage;
 import org.slf4j.Logger;

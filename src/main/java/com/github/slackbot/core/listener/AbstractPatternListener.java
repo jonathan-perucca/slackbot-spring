@@ -1,6 +1,5 @@
 package com.github.slackbot.core.listener;
 
-import com.github.slackbot.core.AbstractListener;
 import com.github.slackbot.core.SlackClient;
 import com.ullink.slack.simpleslackapi.SlackMessage;
 import lombok.Getter;

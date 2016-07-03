@@ -23,6 +23,7 @@
 		<java.version>1.8</java.version>
 		<simpleslackapi.version>0.3</simpleslackapi.version>
 		<lombok.version>1.16.2</lombok.version>
+		<assertj-core-java8.version>1.0.0m1</assertj-core-java8.version>
 	</properties>
 
 	<dependencies>
@@ -41,6 +42,12 @@
 			<groupId>com.ullink.slack</groupId>
 			<artifactId>simpleslackapi</artifactId>
 			<version>${simpleslackapi.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core-java8</artifactId>
+			<version>${assertj-core-java8.version}</version>
 		</dependency>
 
 		<dependency>
